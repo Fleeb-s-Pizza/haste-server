@@ -340,7 +340,7 @@ Here is a list of all the environment variables
 
 ## Author
 
-John Crepezzi <john.crepezzi@gmail.com>
+John Crepezzi <john.crepezzi@gmail.com><br>
 Vladimir-Urik <gggedrvideos@gmail.com>
 
 ### Other components:
