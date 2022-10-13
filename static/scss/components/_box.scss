@@ -1,0 +1,84 @@
+.box {
+  padding: 0;
+  width: 100%;
+  border: 0px;
+  outline: none;
+  font-size: 13px;
+  overflow: inherit;
+
+  & > code {
+    background: transparent !important;
+  }
+
+  &-1 {
+    padding: 5px;
+    text-align: center;
+    background: $Box1Background;
+
+    & > a.logo, & > a.logo:visited {
+      display: inline-block;
+      background: url("../../images/logo.png") no-repeat;
+      width: 126px;
+      height: 42px;
+
+      &:hover {
+        background-position: 0 bottom;
+      }
+    }
+  }
+
+  &-2 {
+    background: $Box2Background;
+    font-size: 0px;
+    padding: 0px 5px;
+
+    & > .function {
+      background: url("../../images/function-icons.png");
+      width: 32px;
+      height: 37px;
+      display: inline-block;
+      position: relative;
+
+      & > .enabled:hover {
+        cursor: hand;
+        cursor: pointer;
+      }
+
+      @include function("save", -5px);
+      @include function("new", -42px);
+      @include function("duplicate", -79px);
+      @include function("raw", -116px);
+      @include function("twitter", -153px);
+    }
+
+    & > .button {
+      &-picture {
+        border-width: 0;
+        font-size: inherit;
+      }
+    }
+
+    & > .link > embed {
+      vertical-align: bottom;
+    }
+  }
+
+  &-3 {
+    background: $Box3Background;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 10px 15px;
+    user-select: none;
+
+    & > .label {
+      color: $BaseTextColor;
+      font-weight: bold;
+    }
+
+    & > .shortcut {
+      color: $ShortcutTextColor;
+      font-weight: normal;
+    }
+  }
+}

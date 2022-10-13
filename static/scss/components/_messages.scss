@@ -1,0 +1,26 @@
+.messages {
+  position:fixed;
+  top:0px;
+  right:138px;
+  margin:0;
+  padding:0;
+  width:400px;
+
+  & > li {
+    background: $Box3Background;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 10px 15px;
+    user-select: none;
+    color: $BaseTextColor;
+    font-weight: bold;
+    background: $MessagesBackground;
+    margin:0 auto;
+    list-style:none;
+
+    &.error {
+      background: $MessagesBackgroundError;
+    }
+  }
+}

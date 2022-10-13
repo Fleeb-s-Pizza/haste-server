@@ -1,0 +1,15 @@
+@mixin function($name, $position) {
+  &.#{$name} {
+    background-position: $position top;
+  }
+
+  &.enabled {
+    &.#{$name} {
+      background-position: $position center;
+
+      &:hover {
+        background-position: $position bottom;
+      }
+    }
+  }
+}

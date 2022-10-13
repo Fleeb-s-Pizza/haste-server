@@ -92,15 +92,15 @@ haste_document.prototype.save = function(data, callback) {
 var haste = function(appName, options) {
   this.appName = appName;
   this.$textarea = $('textarea');
-  this.$box = $('#box');
-  this.$code = $('#box code');
-  this.$linenos = $('#linenos');
+  this.$box = $('.box');
+  this.$code = $('.box > code');
+  this.$linenos = $('.linenos');
   this.options = options;
   this.configureShortcuts();
   this.configureButtons();
   // If twitter is disabled, hide the button
   if (!options.twitter) {
-    $('#box2 .twitter').hide();
+    $('.box-2 .twitter').hide();
   }
 };
 
@@ -113,7 +113,7 @@ haste.prototype.setTitle = function(ext) {
 // Show a message box
 haste.prototype.showMessage = function(msg, cls) {
   var msgBox = $('<li class="'+(cls || 'info')+'">'+msg+'</li>');
-  $('#messages').prepend(msgBox);
+  $('.messages').prepend(msgBox);
   setTimeout(function() {
     msgBox.slideUp('fast', function() { $(this).remove(); });
   }, 3000);
@@ -132,7 +132,7 @@ haste.prototype.fullKey = function() {
 // Set the key up for certain things to be enabled
 haste.prototype.configureKey = function(enable) {
   var $this, i = 0;
-  $('#box2 .function').each(function() {
+  $('.box-2 .function').each(function() {
     $this = $(this);
     for (i = 0; i < enable.length; i++) {
       if ($this.hasClass(enable[i])) {
@@ -195,12 +195,12 @@ haste.prototype.addLineNumbers = function(lineCount) {
   for (var i = 0; i < lineCount; i++) {
     h += (i + 1).toString() + '<br/>';
   }
-  $('#linenos').html(h);
+  $('.linenos').html(h);
 };
 
 // Remove the line numbers
 haste.prototype.removeLineNumbers = function() {
-  $('#linenos').html('&gt;');
+  $('.linenos').html('&gt;');
 };
 
 // Load a document and show it
@@ -261,7 +261,7 @@ haste.prototype.configureButtons = function() {
   var _this = this;
   this.buttons = [
     {
-      $where: $('#box2 .save'),
+      $where: $('.box-2 .save'),
       label: 'Save',
       shortcutDescription: 'control + s',
       shortcut: function(evt) {
@@ -274,7 +274,7 @@ haste.prototype.configureButtons = function() {
       }
     },
     {
-      $where: $('#box2 .new'),
+      $where: $('.box-2 .new'),
       label: 'New',
       shortcut: function(evt) {
         return evt.ctrlKey && evt.keyCode === 78;
@@ -285,7 +285,7 @@ haste.prototype.configureButtons = function() {
       }
     },
     {
-      $where: $('#box2 .duplicate'),
+      $where: $('.box-2 .duplicate'),
       label: 'Duplicate & Edit',
       shortcut: function(evt) {
         return _this.doc.locked && evt.ctrlKey && evt.keyCode === 68;
@@ -296,7 +296,7 @@ haste.prototype.configureButtons = function() {
       }
     },
     {
-      $where: $('#box2 .raw'),
+      $where: $('.box-2 .raw'),
       label: 'Just Text',
       shortcut: function(evt) {
         return evt.ctrlKey && evt.shiftKey && evt.keyCode === 82;
@@ -307,7 +307,7 @@ haste.prototype.configureButtons = function() {
       }
     },
     {
-      $where: $('#box2 .twitter'),
+      $where: $('.box-2 .twitter'),
       label: 'Twitter',
       shortcut: function(evt) {
         return _this.options.twitter && _this.doc.locked && evt.shiftKey && evt.ctrlKey && evt.keyCode == 84;
@@ -333,15 +333,15 @@ haste.prototype.configureButton = function(options) {
   });
   // Show the label
   options.$where.mouseenter(function() {
-    $('#box3 .label').text(options.label);
-    $('#box3 .shortcut').text(options.shortcutDescription || '');
-    $('#box3').show();
-    $(this).append($('#pointer').remove().show());
+    $('.box-3 .label').text(options.label);
+    $('.box-3 .shortcut').text(options.shortcutDescription || '');
+    $('.box-3').show();
+    $(this).append($('.pointer').remove().show());
   });
   // Hide the label
   options.$where.mouseleave(function() {
-    $('#box3').hide();
-    $('#pointer').hide();
+    $('.box-3').hide();
+    $('.pointer').hide();
   });
 };
 
