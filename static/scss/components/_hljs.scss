@@ -7,7 +7,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #002b36;
+  background: $BodyBackground;
   color: #839496;
 
   &-comment, &-quote {
@@ -39,7 +39,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
   }
 
   &-formula {
-    background: #073642;
+    background: $BodyBackground;
   }
 
   &-emphasis {
