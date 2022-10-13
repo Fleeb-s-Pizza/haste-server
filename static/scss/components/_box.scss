@@ -29,6 +29,8 @@
     font-size: 0px;
     padding: 0px 5px;
     border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: space-between;
 
     & > .function {
       width: 32px;
@@ -45,7 +47,6 @@
       @include function("new", -42px);
       @include function("duplicate", -79px);
       @include function("raw", -116px);
-      @include function("twitter", -153px);
     }
 
     & > .link > embed {
