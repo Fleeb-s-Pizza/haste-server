@@ -1,6 +1,8 @@
 .key {
   position: fixed;
-  top: 0px;
-  right: 0px;
-  z-index: +1000; /* watch out */
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
+  border-radius: 5px;
 }

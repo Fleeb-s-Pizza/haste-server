@@ -14,6 +14,7 @@
     padding: 5px;
     text-align: center;
     background: $Box1Background;
+    border-radius: 5px 5px 0 0;
 
     & > a {
       & > .logo {
@@ -27,6 +28,7 @@
     background: $Box2Background;
     font-size: 0px;
     padding: 0px 5px;
+    border-radius: 0 0 5px 5px;
 
     & > .function {
       width: 32px;
