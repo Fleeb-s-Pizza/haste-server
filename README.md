@@ -11,6 +11,11 @@ to do things like:
 which will output a URL to share containing the contents of `cat something`'s
 STDOUT.  Check the README there for more details and usages.
 
+## UI
+![UI](https://i.imgur.com/yI9aIjK.png)
+![Share](https://i.imgur.com/vU8zm12.gif)
+![Menu](https://i.imgur.com/vZSuYp0.gif)
+
 ## Tested Browsers
 
 * Firefox 8
