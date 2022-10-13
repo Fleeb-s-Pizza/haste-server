@@ -15,14 +15,10 @@
     text-align: center;
     background: $Box1Background;
 
-    & > a.logo, & > a.logo:visited {
-      display: inline-block;
-      background: url("../../images/logo.png") no-repeat;
-      width: 126px;
-      height: 42px;
-
-      &:hover {
-        background-position: 0 bottom;
+    & > a {
+      & > .logo {
+        width: 126px;
+        height: 42px;
       }
     }
   }
@@ -33,11 +29,11 @@
     padding: 0px 5px;
 
     & > .function {
-      background: url("../../images/function-icons.png");
       width: 32px;
       height: 37px;
       display: inline-block;
       position: relative;
+      background-color: transparent;
 
       & > .enabled:hover {
         cursor: hand;
@@ -49,13 +45,6 @@
       @include function("duplicate", -79px);
       @include function("raw", -116px);
       @include function("twitter", -153px);
-    }
-
-    & > .button {
-      &-picture {
-        border-width: 0;
-        font-size: inherit;
-      }
     }
 
     & > .link > embed {

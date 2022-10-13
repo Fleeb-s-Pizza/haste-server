@@ -1,14 +1,24 @@
 @mixin function($name, $position) {
   &.#{$name} {
-    background-position: $position top;
+    border-width: 0;
+    font-size: inherit;
+
+    & > svg {
+      stroke: $ShortcutTextColor;
+      opacity: 0.2;
+    }
   }
 
   &.enabled {
     &.#{$name} {
-      background-position: $position center;
+      & > svg {
+        opacity: 1;
+      }
 
       &:hover {
-        background-position: $position bottom;
+        & > svg {
+          stroke: $BaseTextColor;
+        }
       }
     }
   }
