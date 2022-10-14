@@ -1,6 +1,6 @@
 version: '3.0'
 services:
-  haste-server:
+  pizzabin:
     build: .
     environment:
       - STORAGE_TYPE=memcached

@@ -15,12 +15,14 @@
   "main": "haste",
   "dependencies": {
     "busboy": "0.2.4",
+    "concurrently": "^7.4.0",
     "connect": "^3.7.0",
     "connect-ratelimit": "0.0.7",
     "connect-route": "0.1.5",
     "pg": "^8.0.0",
     "redis": "0.8.1",
     "redis-url": "0.1.0",
+    "sass": "^1.55.0",
     "st": "^2.0.0",
     "uglify-js": "3.1.6",
     "winston": "^2.0.0"
@@ -41,7 +43,10 @@
     "lib": "./lib"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "yarn compile && yarn start-without-compile",
+    "compile": "sass ./static/scss/styles.scss ./static/scss/styles.css --style compressed",
+    "start-without-compile": "node server.js",
+    "dev": "concurrently \"sass --watch ./static/scss/styles.scss ./static/scss/styles.css\" \"yarn start-without-compile\"",
     "test": "mocha --recursive"
   }
 }
